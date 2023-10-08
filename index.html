@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" data-dark>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/internas.css">
+</head>
+
+<body>
+    <!-- el tema oscuro solo se aplicará a las etiquetas que tenga el data atribute data dark -->
+    <header class="header" data-dark="">
+        <h1>BÚSQUEDAS</h1>
+    </header>
+    <!-- menu -->
+    <aside class="panel">
+        <nav class="menu">
+            <a href="#section1" data-scroll-spy>Búsquedas Internas</a>
+            <a href="#section2" data-scroll-spy>Búsquedas Internas</a>
+            <a href="#section3" data-scroll-spy>Árboles</a>
+            <a href="#section4" data-scroll-spy>Dinámicas</a>
+            <a href="#section5" data-scroll-spy>Índices</a>
+        </nav>
+    </aside>
+    <!-- Contenido -->
+    <main>
+        <section id="section1" class="section" data-scroll-spy>
+            <div class="menu-internas">
+                <button class="btn-secuencial-binaria">secuencial o binaria</button>
+                <button class="btn-hash">hash</button>
+            </div>
+            <div class="panel-secuencial-binaria invisible">
+                <form action="" class="form-crear-estructura">
+                    <!-- Crear estructura -->
+                    <input class="input-rango" type="number" name="rango" placeholder="Rango:" title="rango">
+                    <button class="btn-crear-estructura">Crear estructura</button>
+                    <button class="btn-ordenar-estructura">Ordenar estructura</button>
+                    <button class="btn-estructura-original">Estructura original</button>
+
+                    <!-- visulizar estructura -->
+                    <button class="btn-visualizar-estructura">Visualizar estructura</button>
+
+                    <!-- Insertar clave -->
+
+                    <input type="number" name="clave" placeholder="Rango:" title="clave" class="input-insertar-clave">
+                    <button class="btn-insertar-clave">Insertar clave</button>
+
+
+                    <!-- Buscar clave -->
+
+                    <label for="">Tipo de búsqueda:</label>
+                    <select name="Tipos de búsqueda" class="tipo-busqueda">
+                        <option value="secuencial" selected>Secuencial</option>
+                        <option value="binaria">Binaria</option>
+                    </select>
+                    <input class="clave-buscar" type="number" name="clave" placeholder="Clave" title="clave">
+                    <button class="btn-buscar-clave">Buscar</button>
+
+                </form>
+                <!-- estructura de datos -->
+                <div class="panel-estructura">
+                    <table class="estructura-interna" border="1">
+                        <thead>
+                            <tr>
+                                <th>Posición</th>
+                                <th>Clave</th>
+                            </tr>
+                        </thead>
+
+
+                    </table>
+                </div>
+                <!-- Resultado búsqueda -->
+                <div class="panel-resultado-busqueda"></div>
+            </div>
+            <div class="panel-hash invisible" style="display: none;"></div>
+        </section>
+    </main>
+    <!-- como se va a trabajar con módulos se especifica el atributo type = module -->
+    <script type="module" src="js/busquedas_internas/opciones.js"></script>
+</body>
+
+</html>

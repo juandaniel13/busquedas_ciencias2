@@ -1,0 +1,131 @@
+
+
+.panel{
+    position:fixed;
+    z-index: 998;
+    background-color: var(--second-modal-color);
+    top: 0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    /* 
+    para que salga de arriba x = 0 / y = -100 (los valores negativos de y son hacia arriba)
+    */
+    transform: translate(0,-100%);
+    /* de abajo*/
+    /* transform: translate(0,100%); */
+    transition: transform .3s ease;
+    overflow-y: auto;
+}
+
+.panel.is-active{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0,0);
+}
+
+.panel-btn, .scroll-btn, .theme-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+/*     background-color: red; */
+}
+
+.menu{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+ 
+
+   
+}
+
+.menu a{
+    padding: 2rem;
+    width:inherit ;
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #FFFBFB;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover{
+    font-weight: bold;
+    color: #FFFBFB;
+    background-color: var(--main-modal-color);
+}
+
+/* ScrollSpy */
+
+@media screen and (min-width: 1000px) {
+    body{
+       display: grid;
+       grid-template-columns: 80% 20%;
+       grid-template-rows: 4rem auto;
+       grid-template-areas: /* maquetar */
+       "header header"
+       "main   panel";
+
+    }
+    main{
+       grid-area: main;
+      
+    }
+    .header{
+       grid-area: header;
+    }
+    .panel{
+       height: 100vh;
+       grid-area: panel;
+       align-self:start ;
+       position: sticky;
+       top:4rem;
+       justify-content: flex-start;
+       background-color: var(--second-color);
+       transform: translate(0,0);
+       opacity: 1;
+       visibility: visible;
+       
+
+    }
+    .panel-btn{
+       display: none;
+    }
+    .menu{
+       justify-content: start;
+       text-align: right;
+    }
+    .menu a{
+       font-size: 1rem;
+       padding: 0.75rem;
+    }
+    .menu a:hover,
+    .menu a.active {
+      background-color: var(--main-color);
+      color:#FFFBFB;
+      padding: 0.75rem;
+    }
+    .scroll-btn{
+       right: initial;
+       left:calc(4.25rem + 1vw);
+    }
+    .section{
+    /*    border: thin solid red; */
+    }
+}
