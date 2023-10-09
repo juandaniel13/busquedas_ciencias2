@@ -33,7 +33,7 @@
                 <button class="btn-secuencial-binaria">secuencial o binaria</button>
                 <button class="btn-hash">hash</button>
             </div>
-            <div class="panel-secuencial-binaria invisible">
+            <div class="panel-busqueda panel-secuencial-binaria invisible">
                 <form action="" class="form-crear-estructura menu-opciones">
                     <!-- Crear estructura -->
                     <input class="input-rango" type="number" name="rango" placeholder="Rango:" title="rango">
@@ -46,7 +46,7 @@
 
                     <!-- Insertar clave -->
 
-                    <input type="number" name="clave" placeholder="Rango:" title="clave" class="input-insertar-clave">
+                    <input type="number" name="clave" placeholder="Clave:" title="clave" class="input-insertar-clave">
                     <button class="btn-insertar-clave">Insertar clave</button>
 
 
@@ -62,64 +62,73 @@
 
                 </form>
                 <!-- estructura de datos -->
-                <div class="panel-estructura">
-                    <table class="estructura-interna" border="1">
-                        <thead>
-                            <tr>
-                                <th>Posición</th>
-                                <th>Clave</th>
-                            </tr>
-                        </thead>
-
-
-                    </table>
+                <div class="salida">
+                    <div class="panel-estructura">
+                        <table class="estructura-interna" border="1">
+                            <thead>
+                                <tr>
+                                    <th>Posición</th>
+                                    <th>Clave</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <!-- Resultado búsqueda -->
+                    <div class="panel-resultado-busqueda"></div>
                 </div>
-                <!-- Resultado búsqueda -->
-                <div class="panel-resultado-busqueda"></div>
             </div>
-            <div class="panel-hash invisible">
+
+            <!-- hashing -->
+            <div class="panel-busquera panel-hash invisible">
+
                 <form action="" class="form-crear-estructura-hash menu-opciones">
                     <!-- Crear estructura -->
-                    <input class="input-rango" type="number" name="rango" placeholder="Rango:" title="rango">
+                    <input class="input-rango-hash" type="number" name="rango" placeholder="Rango:" title="rango">
                     <button class="btn-crear-estructura">Crear estructura</button>
-                    <button class="btn-ordenar-estructura">Ordenar estructura</button>
-                    <button class="btn-estructura-original">Estructura original</button>
 
                     <!-- visulizar estructura -->
-                    <button class="btn-visualizar-estructura">Visualizar estructura</button>
+                    <button class="btn-visualizar-estructura-hash">Visualizar estructura</button>
 
                     <!-- Insertar clave -->
-
-                    <input type="number" name="clave" placeholder="Rango:" title="clave" class="input-insertar-clave">
-                    <button class="btn-insertar-clave">Insertar clave</button>
+                    <select name="tipo-hash" class="tipo-hash">
+                        <option value="mod" selected>mod</option>
+                        <option value="cuadrado">cuadrado</option>
+                        <option value="truncamiento" selected>truncamiento</option>
+                        <option value="plegamiento">plegamiento</option>
+                    </select>
+                    <select name="colision-hash" class="colision-hash">
+                        <option value="lineal" selected>lienal</option>
+                        <option value="cuadratica">cuadrado</option>
+                        <option value="doble-hash" selected>doble-hash</option>
+                        <option value="arreglos-anidados">arreglos-anidados</option>
+                    </select>
+                    <input type="number" name="clave" placeholder="Clave:" title="clave" class="input-insertar-clave-hash">
+                    <button class="btn-insertar-clave-hash">Insertar clave</button>
 
 
                     <!-- Buscar clave -->
-
-                    <label for="">Tipo de búsqueda:</label>
-                    <select name="Tipos de búsqueda" class="tipo-busqueda">
-                        <option value="secuencial" selected>Secuencial</option>
-                        <option value="binaria">Binaria</option>
-                    </select>
-                    <input class="clave-buscar" type="number" name="clave" placeholder="Clave" title="clave">
-                    <button class="btn-buscar-clave">Buscar</button>
+                    
+                    <input class="clave-buscar-hash" type="number" name="clave" placeholder="Clave" title="clave">
+                    <button class="btn-buscar-clave-hash">Buscar</button>
 
                 </form>
                 <!-- estructura de datos -->
-                <div class="panel-estructura panel-estructura-hash">
-                    <table class="estructura-interna-hash" border="1">
-                        <thead>
-                            <tr>
-                                <th>Posición</th>
-                                <th>Clave</th>
-                            </tr>
-                        </thead>
+                <div class="salida">
+                    <div class="panel-estructura panel-estructura-hash">
+                        <table class="estructura-interna-hash" border="1">
+                            <thead>
+                                <tr>
+                                    <th>Posición</th>
+                                    <th>Clave</th>
+                                </tr>
+                            </thead>
 
 
-                    </table>
+                        </table>
+                    </div>
+                    <!-- Resultado búsqueda -->
+                    <div class="panel-resultado-busqueda panel-resultado-busqueda-hash"></div>
                 </div>
-                <!-- Resultado búsqueda -->
-                <div class="panel-resultado-busqueda panel-resultado-busqueda-hash"></div>
             </div>
         </section>
     </main>

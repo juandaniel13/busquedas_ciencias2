@@ -1,58 +1,83 @@
-.crear-estructura{
-    
-}
-
-
-.menu-opciones{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    padding: 10px;
-    border: thin solid black;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-evenly;
+/* Estilos generales para formularios */
+.menu-opciones {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 10px;
+  border: thin solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+  background-color: #f8f8f8;
+  border-radius: 5px;
 }
 
 .menu-opciones * {
-    margin-bottom: 15px;
-    
+  margin-bottom: 15px;
 }
 
-.panel-estructura{
-    margin-top: 25px;
-    height: 30vh;
-    width: 50%;
-    border: thin solid black;
-    scroll-behavior: auto;
-    overflow: auto;
-    margin-left: 5%;
-
+/* Estilos para los botones */
+.menu-opciones button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.panel-estructura *{
-    margin-left: auto;
-    margin-right: auto;
+.menu-opciones button:hover {
+  background-color: #0056b3;
 }
 
-.panel-resultado-busqueda{
-    margin-top: 25px;
-    border: thin solid black;
-    height: 30vh;
-    margin-left: 10px;
-    margin-right: auto;
-    width: 40%;
+/* Estilos para los campos de entrada */
+.menu-opciones input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
-.panel-secuencial-binaria {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content:space-evenlyss ;
- 
+.menu-opciones select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Estilos para etiquetas */
+.menu-opciones label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Estilos para el contenedor de salida */
+.salida {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  height: 50vh;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilos para los paneles de estructura y resultado de búsqueda */
+.panel-estructura,
+.panel-resultado-busqueda {
+  flex: 1 1 200px;
+  border: thin solid #ccc;
+  overflow: auto;
+  max-height: 50vh;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
 }
 
 .invisible{
-    display: none;
-    
+  display: none;
 }
