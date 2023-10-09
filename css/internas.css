@@ -3,7 +3,7 @@
 }
 
 
-.panel-secuencial-binaria form{
+.menu-opciones{
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
@@ -15,7 +15,7 @@
     justify-content: space-evenly;
 }
 
-.panel-secuencial-binaria form * {
+.menu-opciones * {
     margin-bottom: 15px;
     
 }

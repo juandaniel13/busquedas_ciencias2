@@ -34,7 +34,7 @@
                 <button class="btn-hash">hash</button>
             </div>
             <div class="panel-secuencial-binaria invisible">
-                <form action="" class="form-crear-estructura">
+                <form action="" class="form-crear-estructura menu-opciones">
                     <!-- Crear estructura -->
                     <input class="input-rango" type="number" name="rango" placeholder="Rango:" title="rango">
                     <button class="btn-crear-estructura">Crear estructura</button>
@@ -77,7 +77,50 @@
                 <!-- Resultado búsqueda -->
                 <div class="panel-resultado-busqueda"></div>
             </div>
-            <div class="panel-hash invisible" style="display: none;"></div>
+            <div class="panel-hash invisible">
+                <form action="" class="form-crear-estructura-hash menu-opciones">
+                    <!-- Crear estructura -->
+                    <input class="input-rango" type="number" name="rango" placeholder="Rango:" title="rango">
+                    <button class="btn-crear-estructura">Crear estructura</button>
+                    <button class="btn-ordenar-estructura">Ordenar estructura</button>
+                    <button class="btn-estructura-original">Estructura original</button>
+
+                    <!-- visulizar estructura -->
+                    <button class="btn-visualizar-estructura">Visualizar estructura</button>
+
+                    <!-- Insertar clave -->
+
+                    <input type="number" name="clave" placeholder="Rango:" title="clave" class="input-insertar-clave">
+                    <button class="btn-insertar-clave">Insertar clave</button>
+
+
+                    <!-- Buscar clave -->
+
+                    <label for="">Tipo de búsqueda:</label>
+                    <select name="Tipos de búsqueda" class="tipo-busqueda">
+                        <option value="secuencial" selected>Secuencial</option>
+                        <option value="binaria">Binaria</option>
+                    </select>
+                    <input class="clave-buscar" type="number" name="clave" placeholder="Clave" title="clave">
+                    <button class="btn-buscar-clave">Buscar</button>
+
+                </form>
+                <!-- estructura de datos -->
+                <div class="panel-estructura panel-estructura-hash">
+                    <table class="estructura-interna-hash" border="1">
+                        <thead>
+                            <tr>
+                                <th>Posición</th>
+                                <th>Clave</th>
+                            </tr>
+                        </thead>
+
+
+                    </table>
+                </div>
+                <!-- Resultado búsqueda -->
+                <div class="panel-resultado-busqueda panel-resultado-busqueda-hash"></div>
+            </div>
         </section>
     </main>
     <!-- como se va a trabajar con módulos se especifica el atributo type = module -->

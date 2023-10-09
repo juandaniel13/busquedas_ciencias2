@@ -8,6 +8,7 @@ let rango = 0;
 
 /* botones */
 const $btnSecuencialBinaria = d.querySelector(".btn-secuencial-binaria");
+const $btnHash= d.querySelector(".btn-hash");
 const $btnCrearEstructura = d.querySelector(".btn-crear-estructura"); //listo
 const $btnOrdenarEstructura = d.querySelector(".btn-ordenar-estructura"); //listo
 const $btnEstructuraOriginal = d.querySelector(".btn-estructura-original");//listo
@@ -17,6 +18,7 @@ const $btnBuscarClave = d.querySelector(".btn-buscar-clave");//listo
 
 /* Paneles */
 const $panelSecuencialBinaria = d.querySelector(".panel-secuencial-binaria")
+const $panelHash = d.querySelector(".panel-hash")
 const $estructura = d.querySelector(".estructura-interna");
 const $panelResultadosBusqueda = d.querySelector(".panel-resultado-busqueda");
 
@@ -25,6 +27,7 @@ const $rango = d.querySelector(".input-rango");
 const $claveInsertar = d.querySelector(".input-insertar-clave");
 const $tipoBusqueda = d.querySelector(".tipo-busqueda");
 const $claveBuscar = d.querySelector(".clave-buscar");
+
 
 function insertarClave(clave) {
   for (let i = 0; i < rango; i++) {
@@ -55,10 +58,6 @@ function visualizarEstructura(estructura) {
   $estructura.appendChild($tableFragment);
 }
 
-function ordenarEstructura(estructura) {
-  // Implementa la lógica para ordenar la estructura.
-}
-
 function mostrarResultadoBusqueda(posicion) {
   if (posicion !== -1) {
     $panelResultadosBusqueda.textContent = `Clave encontrada en la posición ${posicion}.`;
@@ -84,8 +83,10 @@ d.addEventListener("DOMContentLoaded", (e) => {
   d.addEventListener("click", (e) => {
     if(e.target ==$btnSecuencialBinaria ){
       $panelSecuencialBinaria.classList.remove("invisible")
-    }else{
+      $panelHash.classList.add("invisible")
+    }else if(e.target ==$btnHash ){
       $panelSecuencialBinaria.classList.add("invisible")
+      $panelHash.classList.remove("invisible")
     }
     e.preventDefault();
     if (e.target == $btnCrearEstructura) {
