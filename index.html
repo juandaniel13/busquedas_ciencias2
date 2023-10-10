@@ -21,8 +21,8 @@
     <aside class="panel">
         <nav class="menu">
             <a href="#section1">Búsquedas Internas</a>
-            <a href="#section2">Búsquedas Internas</a>
-            <a href="#section3">Árboles</a>
+            <a href="#section2">Búsquedas Externa</a>
+            <a href="#section3">Árboles</a>nternas
             <a href="#section4">Dinámicas</a>
             <a href="#section5">Índices</a>
         </nav>
@@ -134,8 +134,111 @@
                 </div>
             </div>
         </section>
+
+
         <!-- Externas -->
-        <section id="section2" class="section "></section>
+        <section id="section2" class="section ">
+            <div class="menu-externas">
+                <button class="btn-secuencial-binaria-externa">secuencial o binaria</button>
+                <button class="btn-hash-externa">hash</button>
+            </div>
+            <div class="panel-busqueda panel-secuencial-binaria-externa ">
+                <form action="" class="form-crear-estructura-externa menu-opciones">
+                    <!-- Crear estructura -->
+                    <input class="input-rango-externa" type="number" name="rango" placeholder="Rango:" title="rango">
+                    <button class="btn-crear-estructura-externa">Crear estructura</button>
+                    <button class="btn-ordenar-estructura-externa">Ordenar estructura</button>
+                    <button class="btn-estructura-original-externa">Estructura original</button>
+
+                    <!-- visulizar estructura -->
+                    <button class="btn-visualizar-estructura-externa">Visualizar estructura</button>
+
+                    <!-- Insertar clave -->
+
+                    <input type="number" name="clave" placeholder="Clave:" title="clave" class="input-insertar-clave">
+                    <button class="btn-insertar-clave-externa">Insertar clave</button>
+
+
+                    <!-- Buscar clave -->
+
+                    <label for="">Tipo de búsqueda:</label>
+                    <select name="Tipos de búsqueda-externa" class="tipo-busqueda">
+                        <option value="secuencial" selected>Secuencial</option>
+                        <option value="binaria">Binaria</option>
+                    </select>
+                    <input class="clave-buscar-externa" type="number" name="clave" placeholder="Clave" title="clave">
+                    <button class="btn-buscar-clave-externa">Buscar</button>
+
+                </form>
+                <!-- estructura de datos -->
+                <div class="salida">
+                    <div class="panel-estructura-externa">
+                        <table class="estructura-externa" border="1">
+                            <thead>
+                                <tr>
+                                    <th>Posición</th>
+                                    <th>Clave</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <!-- Resultado búsqueda -->
+                    <div class="panel-resultado-busqueda-externa"></div>
+                </div>
+            </div>
+
+            <!-- hashing -->
+            <div class="panel-busqueda panel-hash ">
+
+                <form action="" class="form-crear-estructura-externa-hash menu-opciones">
+                    <!-- Crear estructura -->
+                    <input class="input-rango-externa-hash" type="number" name="rango" placeholder="Rango:" title="rango">
+                    <button class="btn-crear-estructura-externa-hash">Crear estructura</button>
+
+                    <!-- visulizar estructura -->
+                    <button class="btn-visualizar-estructura-externa-hash">Visualizar estructura</button>
+
+                    <!-- Insertar clave -->
+                    <select name="tipo-hash-externa" class="tipo-hash">
+                        <option value="mod" selected>mod</option>
+                        <option value="cuadrado">cuadrado</option>
+                        <option value="truncamiento" selected>truncamiento</option>
+                        <option value="plegamiento">plegamiento</option>
+                    </select>
+                    <select name="colision-hash-externa" class="colision-hash">
+                        <option value="areaColisionIndependiente" selected>lienal</option>
+                        <option value="areaColisionEntreBloques">cuadrado</option>
+                    </select>
+                    <input type="number" name="clave" placeholder="Clave:" title="clave"
+                        class="input-insertar-clave-hash-externa">
+                    <button class="btn-insertar-clave-hash-externa">Insertar clave</button>
+
+
+                    <!-- Buscar clave -->
+
+                    <input class="clave-buscar-hash-externa" type="number" name="clave" placeholder="Clave" title="clave">
+                    <button class="btn-buscar-clave-hash-externa">Buscar</button>
+
+                </form>
+                <!-- estructura de datos -->
+                <div class="salida">
+                    <div class="panel-estructura panel-estructura-hash">
+                        <table class="estructura-interna-hash" border="1">
+                            <thead>
+                                <tr>
+                                    <th>Posición</th>
+                                    <th>Clave</th>
+                                </tr>
+                            </thead>
+
+
+                        </table>
+                    </div>
+                    <!-- Resultado búsqueda -->
+                    <div class="panel-resultado-busqueda panel-resultado-busqueda-hash"></div>
+                </div>
+            </div>
+        </section>
         <!-- Arboles -->
         <section id="section3" class="section ">
             <!-- entrada -->
@@ -153,14 +256,14 @@
                 <!-- visulizar estructura -->
                 <button class="btn-visualizar-arbol">Visualizar estructura</button>
 
-                
-                
-                
+
+
+
             </form>
             <!-- salida -->
             <div class="salida">
                 <div class="panel-estructura estructura-arbol">
-                    
+
                 </div>
                 <!-- Resultado búsqueda -->
                 <div class="panel-resultado-busqueda resultado-arbol"></div>
