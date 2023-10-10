@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/internas.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 
 <body>
@@ -19,16 +20,17 @@
     <!-- menu -->
     <aside class="panel">
         <nav class="menu">
-            <a href="#section1" data-scroll-spy>Búsquedas Internas</a>
-            <a href="#section2" data-scroll-spy>Búsquedas Internas</a>
-            <a href="#section3" data-scroll-spy>Árboles</a>
-            <a href="#section4" data-scroll-spy>Dinámicas</a>
-            <a href="#section5" data-scroll-spy>Índices</a>
+            <a href="#section1">Búsquedas Internas</a>
+            <a href="#section2">Búsquedas Internas</a>
+            <a href="#section3">Árboles</a>
+            <a href="#section4">Dinámicas</a>
+            <a href="#section5">Índices</a>
         </nav>
     </aside>
     <!-- Contenido -->
     <main>
-        <section id="section1" class="section" data-scroll-spy>
+        <!-- Internas -->
+        <section id="section1" class="section">
             <div class="menu-internas">
                 <button class="btn-secuencial-binaria">secuencial o binaria</button>
                 <button class="btn-hash">hash</button>
@@ -84,7 +86,7 @@
                 <form action="" class="form-crear-estructura-hash menu-opciones">
                     <!-- Crear estructura -->
                     <input class="input-rango-hash" type="number" name="rango" placeholder="Rango:" title="rango">
-                    <button class="btn-crear-estructura">Crear estructura</button>
+                    <button class="btn-crear-estructura-hash">Crear estructura</button>
 
                     <!-- visulizar estructura -->
                     <button class="btn-visualizar-estructura-hash">Visualizar estructura</button>
@@ -102,12 +104,13 @@
                         <option value="doble-hash" selected>doble-hash</option>
                         <option value="arreglos-anidados">arreglos-anidados</option>
                     </select>
-                    <input type="number" name="clave" placeholder="Clave:" title="clave" class="input-insertar-clave-hash">
+                    <input type="number" name="clave" placeholder="Clave:" title="clave"
+                        class="input-insertar-clave-hash">
                     <button class="btn-insertar-clave-hash">Insertar clave</button>
 
 
                     <!-- Buscar clave -->
-                    
+
                     <input class="clave-buscar-hash" type="number" name="clave" placeholder="Clave" title="clave">
                     <button class="btn-buscar-clave-hash">Buscar</button>
 
@@ -131,9 +134,42 @@
                 </div>
             </div>
         </section>
+        <!-- Externas -->
+        <section id="section2" class="section "></section>
+        <!-- Arboles -->
+        <section id="section3" class="section ">
+            <!-- entrada -->
+            <form action="" class="form-crear-estructura menu-opciones">
+                <!-- Crear estructura -->
+                <select name="Tipos de arbol" class="tipo-arbol">
+                    <option value="digital" selected>digital</option>
+                    <option value="residuos">residuos</option>
+                    <option value="residuos-multiples">residuos muestiples</option>
+                    <option value="huffman">huffman</option>
+                </select>
+                <input class="input-clave-arbol" type="text" name="clave-arbol" placeholder="clave:" title="clave">
+                <button class="btn-crear-arbol">Crear estructura</button>
+
+                <!-- visulizar estructura -->
+                <button class="btn-visualizar-arbol">Visualizar estructura</button>
+
+                
+                
+                
+            </form>
+            <!-- salida -->
+            <div class="salida">
+                <div class="panel-estructura estructura-arbol">
+                    
+                </div>
+                <!-- Resultado búsqueda -->
+                <div class="panel-resultado-busqueda resultado-arbol"></div>
+            </div>
+        </section>
     </main>
     <!-- como se va a trabajar con módulos se especifica el atributo type = module -->
     <script type="module" src="js/busquedas_internas/opciones.js"></script>
+    <script type="module" src="js/arboles/opciones.js"></script>
 </body>
 
 </html>
