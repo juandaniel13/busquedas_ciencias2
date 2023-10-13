@@ -8,24 +8,18 @@
     --container-width:1200px; 
 }
 body{
-    display: grid;
-    grid-template-columns: 85% 15%;
-    grid-template-rows: 4rem auto;
-    grid-template-areas: /* maquetar */
-    "header header"
-    "main   panel";
-
+  
  }
  main{
-    grid-area: main;
+   
    
  }
  .header{
-    grid-area: header;
+
  }
  .panel{
     height: 100vh;
-    grid-area: panel;
+    
     align-self:start ;
     position: sticky;
     top:4rem;
@@ -70,3 +64,11 @@ h1{
     position: sticky;
 }
 
+.gris-claro {
+    background-color: lightgray;
+  }
+
+#Form{
+    margin-top: 55px;
+    text-align:  center;
+}

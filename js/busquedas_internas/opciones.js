@@ -54,7 +54,7 @@ const $panelResultadosBusquedaHash = d.querySelector(
 );
 
 /* inputs */
-const $rango = d.querySelector(".input-rango-hash");
+const $rango = d.querySelector(".input-rango");
 const $claveInsertar = d.querySelector(".input-insertar-clave");
 const $tipoBusqueda = d.querySelector(".tipo-busqueda");
 const $claveBuscar = d.querySelector(".clave-buscar");
@@ -109,9 +109,17 @@ function visualizarEstructura(estructura) {
 
 function mostrarResultadoBusqueda(posicion) {
   if (posicion !== -1) {
-    $panelResultadosBusqueda.textContent = `Clave encontrada en la posición ${posicion}.`;
+    $panelResultadosBusqueda.textContent = `Clave encontrada en la posición ${posicion+1}.`;
   } else {
     $panelResultadosBusqueda.textContent = "Clave no encontrada.";
+  }
+}
+
+function mostrarResultadoBusquedaHash(posicion) {
+  if (posicion !== -1) {
+    $panelResultadosBusquedaHash.textContent = `Clave encontrada en la posición ${posicion+1}.`;
+  } else {
+    $panelResultadosBusquedaHash.textContent = "Clave no encontrada.";
   }
 }
 
@@ -144,7 +152,7 @@ function mostrarResultadoHash(colision, solucion) {
 
 function insertarClaveHash(clave, tipoHash, tipoColision) {
   let hash;
-  if (tipoHash === "modulo") {
+  if (tipoHash === "mod") {
     hash = moduloHash(clave, rangoHash);
   } else if (tipoHash === "cuadrado") {
     hash = cuadradoHash(clave, rangoHash);
@@ -153,31 +161,34 @@ function insertarClaveHash(clave, tipoHash, tipoColision) {
   } else if (tipoHash === "truncamiento") {
     hash = truncamientoHash(clave, rangoHash);
   }
-  console.log(estructuraHash);
 
   // Verificar si hay colisión
   if (estructuraHash[hash] !== "") {
     // Se produjo una colisión, aplica la función de resolución
-    if (tipoColision === "pruebaLineal") {
-      hash = pruebaLineal(hash, estructuraHash, rangoHash);
-    } else if (tipoColision === "pruebaCuadratica") {
-      hash = pruebaCuadratica(hash, estructuraHash, rangoHash);
-    } else if (tipoColision === "dobleFuncionHash") {
-      hash = dobleFuncionHash(hash, estructuraHash, rangoHash);
-    } else if (tipoColision === "arregloAnidado") {
-      hash = arregloAnidado(hash, estructuraHash, rangoHash);
+    if (tipoColision === "lineal") {
+    //  hash = pruebaLineal(hash, estructuraHash, rangoHash);
+    } else if (tipoColision === "cuadratica") {
+      //hash = pruebaCuadratica(hash, estructuraHash, rangoHash);
+    } else if (tipoColision === "doble-hash") {
+      //hash = dobleFuncionHash(hash, estructuraHash, rangoHash);
+    } else if (tipoColision === "arreglos-anidados") {
+      // Inserta la clave en la estructura utilizando la función de arreglo anidado
+      //const result = arregloAnidado(hash, estructuraHash, rangoHash, clave);
+      //hash = result.posicion;
+     // clave = result.clave;
     }
   }
 
   // Inserta la clave en la estructura utilizando la posición calculada
   estructuraHash[hash] = clave;
+  // Limpia el campo de entrada
+  $claveInsertarHash.value = "";
 }
-
 
 
 function buscarClaveHash(clave, tipoHash) {
   let hash;
-  if (tipoHash === "modulo") {
+  if (tipoHash === "mod") {
     hash = moduloHash(clave, rangoHash);
   } else if (tipoHash === "cuadrado") {
     hash = cuadradoHash(clave, rangoHash);
@@ -188,9 +199,11 @@ function buscarClaveHash(clave, tipoHash) {
   }
 
   // Realiza la búsqueda en la posición calculada
-  if (estructuraHash[hash] === clave) {
+  if (estructuraHash[hash] == clave) {
+    mostrarResultadoBusquedaHash(hash)
     return hash; // Clave encontrada en la posición calculada
   } else {
+    mostrarResultadoBusquedaHash(-1)
     return -1; // Clave no encontrada
   }
 }
@@ -226,8 +239,9 @@ d.addEventListener("DOMContentLoaded", (e) => {
       $panelHash.classList.remove("invisible");
     }
     //Secuencial binaria
-    e.preventDefault();
+  
     if (e.target == $btnCrearEstructura) {
+      e.preventDefault();
       const inputValue = parseInt($rango.value);
 
       if (!isNaN(inputValue) && inputValue > 0) {
@@ -236,9 +250,11 @@ d.addEventListener("DOMContentLoaded", (e) => {
       }
     }
     if (e.target == $btnVisualizarEstructura) {
+      e.preventDefault();
       visualizarEstructura(estructura);
     }
     if (e.target == $btnOrdenarEstructura) {
+      e.preventDefault();
       visualizarEstructura(
         estructura.sort(function (a, b) {
           if (a === "" && b !== "") {
@@ -252,6 +268,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
       );
     }
     if (e.target == $btnInsertarClave) {
+      e.preventDefault();
       const inputValue = parseInt($claveInsertar.value);
 
       if (!isNaN(inputValue) && inputValue > 0) {
@@ -260,10 +277,12 @@ d.addEventListener("DOMContentLoaded", (e) => {
       }
     }
     if (e.target == $btnEstructuraOriginal) {
+      e.preventDefault();
       visualizarEstructura(estructura);
     }
 
     if (e.target == $btnBuscarClave) {
+      e.preventDefault();
       const inputValue = parseInt($claveBuscar.value);
 
       if (!isNaN(inputValue) && inputValue > 0) {
@@ -273,6 +292,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     }
     //hash
     if (e.target == $btnCrearEstructuraHash) {
+      e.preventDefault();
       const inputValue = parseInt($rangoHash.value);
       console.log($rangoHash.value);
       if (!isNaN(inputValue) && inputValue > 0) {
@@ -281,26 +301,30 @@ d.addEventListener("DOMContentLoaded", (e) => {
       }
     }
     if (e.target == $btnVisualizarEstructuraHash) {
+      e.preventDefault();
       visualizarEstructuraHash(estructuraHash);
     }
 
     if (e.target == $btnInsertarClaveHash) {
+      e.preventDefault();
       const inputValue = parseInt($claveInsertarHash.value);
 
       if (!isNaN(inputValue) && inputValue > 0) {
         let claveInsertarHash = inputValue;
         // La clave se insertará únicamente si se ha seleccionado un tipo hash y un tipo Colision
-        insertarClaveHash(claveInsertarHash, $tipoHash.selectedOptions[0].value, $tipoSolColision.selectedOptions[0].value); // Usar selectedOptions[0].value
+        insertarClaveHash(claveInsertarHash, $tipoHash.value, $tipoSolColision.value); // Usar selectedOptions[0].value
       }
     }
 
     if (e.target == $btnBuscarClaveHash) {
+      e.preventDefault();
       const inputValue = parseInt($claveBuscarHash.value);
 
       if (!isNaN(inputValue) && inputValue > 0) {
         let claveBuscarHash = inputValue;
         // La clave se buscará únicamente si se ha seleccionado un tipo hash
-        buscarClaveHash(claveBuscarHash, $tipoHash.selectedOptions[0].value); // Usar selectedOptions[0].value
+
+        buscarClaveHash(claveBuscarHash, $tipoHash.value); // Usar selectedOptions[0].value
       }
     }
   });

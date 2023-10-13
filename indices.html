@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" data-dark>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/internas.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+
+<body>
+    <!-- el tema oscuro solo se aplicará a las etiquetas que tenga el data atribute data dark -->
+    <header class="header" data-dark="">
+        <h1>ÍNDICES</h1>
+    </header>
+    <!-- menu -->
+    <div class="menu-container">
+        <ul id="menu">
+            <li><a href="internas.html">Búsquedas internas</a></li>
+            <li><a href="externas.html">Búsquedas externas</a></li>
+            <li><a href="DinamicasTotales/index.html">Dinámicas</a></li>
+            <li><a href="indices.html">Índices</a></li>
+            <li><a href="arboles.html">Árboles</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido -->
+    <main>
+        <!-- Internas -->
+        <section id="section1" class="section">
+
+            <div class="panel-busqueda  ">
+                <form action="" class="form-crear-estructura menu-opciones">
+                    <!-- Crear estructura -->
+                    <input class="cant-registros" type="number" name="rango" placeholder="Registros:" title="rango">
+                    <input class="capacidad-bloque" type="number" name="rango" placeholder="Capacidad de bloque:"
+                        title="rango">
+                    <input class="longitud-registo" type="number" name="rango" placeholder="Longitud de registro:"
+                        title="rango">
+                    <input class="longitud-registo-indice" type="number" name="rango"
+                        placeholder="Longitud de registro indice:" title="rango">
+                    <select name="Tipos de búsqueda" class="tipo-estructura">
+                        <option value="indices-primarios" selected>Índices primarios</option>
+                        <option value="indices-multinivel-primarios">Índices multinivel sobre índices primarios</option>
+                        <option value="indices-secundarios">Índices secundarios </option>
+                        <option value="indices-multinivel-secundarios">Índices multinivel sobre índices secundarios</option>
+
+                    </select>
+                    <button class="btn-graficar-estructura">Graficar estructura</button>
+                    <button class="btn-calcular-accesos">Calcular accesos</button>
+
+                </form>
+                <!-- estructura de datos -->
+                <div class="salida">
+                    <div class="panel-estructura">
+                        
+                    </div>
+                    <!-- Resultado búsqueda -->
+                    <div class="panel-resultado-busqueda"></div>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+    <!-- como se va a trabajar con módulos se especifica el atributo type = module -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <script type="module" src="js/indices/opciones_indices.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" data-dark>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/internas.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+
+<body>
+    <!-- el tema oscuro solo se aplicará a las etiquetas que tenga el data atribute data dark -->
+    <header class="header" data-dark="">
+        <h1>ÁRBOLES</h1>
+    </header>
+    <!-- menu -->
+    <div class="menu-container">
+        <ul id="menu">
+            <li><a href="internas.html">Búsquedas internas</a></li>
+            <li><a href="externas.html">Búsquedas externas</a></li>
+            <li><a href="DinamicasTotales/index.html">Dinámicas</a></li>
+            <li><a href="indices.html">Índices</a></li>
+            <li><a href="arboles.html">Árboles</a></li>
+        </ul>
+    </div>
+    <!-- Contenido -->
+    <main>
+        <section id="section3" class="section ">
+            <!-- entrada -->
+            <form action="" class="form-crear-estructura menu-opciones">
+                <!-- Crear estructura -->
+                <select name="Tipos de arbol" class="tipo-arbol">
+                    <option value="digital" selected>digital</option>
+                    <option value="residuos">residuos</option>
+                    <option value="residuos-multiples">residuos muestiples</option>
+                    <option value="huffman">huffman</option>
+                </select>
+                <input class="input-clave-arbol" type="text" name="clave-arbol" placeholder="clave:" title="clave">
+                <button class="btn-crear-arbol">Crear estructura</button>
+
+                <!-- visulizar estructura -->
+                <button class="btn-visualizar-arbol">Visualizar estructura</button>
+
+
+
+
+            </form>
+            <!-- salida -->
+            <div class="salida">
+                <div class="panel-estructura estructura-arbol">
+
+                </div>
+                <!-- Resultado búsqueda -->
+                <div class="panel-resultado-busqueda resultado-arbol"></div>
+            </div>
+        </section>
+    </main>
+    <!-- como se va a trabajar con módulos se especifica el atributo type = module -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script type="module" src="js/arboles/opciones.js"></script>
+</body>
+
+</html>
