@@ -185,3 +185,30 @@ function densidad_rechazada() {
     }
 }
 
+function buscarDatos(){ 
+    var busqueda = document.getElementById("Buqueda").value;
+
+    for ( i=0;i<arreglo.length;i++) {
+        for(j=0;j<2;j++){
+        if (matriz[i][j]==busqueda) {
+            alert("El clave "+busqueda+" se encuentra en la posición ["+i+","+j+"]")
+        if(!arreglo.includes(busqueda)){
+            alert("La clave "+busqueda+" no se encuentra en la estructura")
+            console.log("hola")
+        }
+    }
+}
+}
+
+    dinamicaTotal() //ejecuta la funcion dinamica total, la logica
+}
+// function borrarDatos(){
+//     var dato = document.getElementById("Borrar").value;
+//  for(i=0;i<arreglo.length;i++){
+
+//     if (arreglo[i]==dato) {
+//         delete(arreglo[i])
+//     } 
+//     console.log(arreglo[i])
+//  }
+// }

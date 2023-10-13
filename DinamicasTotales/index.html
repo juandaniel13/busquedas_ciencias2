@@ -14,9 +14,9 @@
     <!-- menu -->
     <div class="menu-container">
         <ul id="menu">
-            <li><a href="../indices.html">Búsquedas internas</a></li>
+            <li><a href="../internas.html">Búsquedas internas</a></li>
             <li><a href="../externas.html">Búsquedas externas</a></li>
-            <li><a href="DinamicasTotales/index.html">Dinámicas</a></li>
+            <li><a href="../DinamicasTotales/index.html">Dinámicas</a></li>
             <li><a href="../indices.html">Índices</a></li>
             <li><a href="../arboles.html">Árboles</a></li>
         </ul>
@@ -24,9 +24,13 @@
 
     <form id="Form">
         <label for="label" id="label">Ingrese la clave</label>
-        <input type="text" id="Clave" placeholder="datos "> <!--Placeholder con id clave, es el que recibe los datos-->
+        <input type="text" id="Clave" placeholder="Clave "> <!--Placeholder con id clave, es el que recibe los datos-->
         <button type="button" id="registrar" onclick="registrarDatos()">Registrar</button><!--mi boton al que le mando la funcion del arreglo del usuario-->
         <button type="button" id="registrar2" onclick="registroAutomatico()">Registro Automatico</button><!--mi boton al que le mando la funcion del arreglo predefinido-->
+        <input type="text" id="Buqueda" placeholder="Clave a buscar "> <!--Placeholder con id clave, es el que recibe los datos-->
+        <button type="button" id="buscar" onclick="buscarDatos()">Buscar</button><!--mi boton al que le mando la funcion del arreglo del usuario-->
+        <!-- <input type="text" id="Borrar" placeholder="Clave    a borrar "> Placeholder con id clave, es el que recibe los datos -->
+        <!-- <button type="button" id="borrar" onclick="borrarDatos()">Borrar</button>mi boton al que le mando la funcion del arreglo del usuario -->
     </form>
     <div class="salida">
         <div class="panel-estructura panel-estructura-dinamicas" >
