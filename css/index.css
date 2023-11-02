@@ -17,7 +17,7 @@ body{
  .header{
 
  }
- .panel{
+ /* .panel{
     height: 100vh;
     
     align-self:start ;
@@ -30,7 +30,7 @@ body{
     visibility: visible;
     
 
- }
+ } */
 
 
 
@@ -48,15 +48,17 @@ body{
     text-align: center;;
 }
 
-.section{
+main{
     padding: 2rem;
-   padding-top:  4rem;
+    padding-top:  4rem;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: var(--container-width);
+    max-width: 96.99%;
     min-height: 100vh;
     text-align: center;
+    background-color: #e7ebf0;
+    margin-top:-15px;
    }
    
 h1{
@@ -68,7 +70,11 @@ h1{
     background-color: lightgray;
   }
 
-#Form{
+/* #Form{
     margin-top: 55px;
     text-align:  center;
 }
+ */
+ .invisible{
+    display: none;
+ }

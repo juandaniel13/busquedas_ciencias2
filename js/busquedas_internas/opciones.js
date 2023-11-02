@@ -247,6 +247,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
       if (!isNaN(inputValue) && inputValue > 0) {
         rango = inputValue;
         estructura = new Array(rango).fill(""); // Crea un arreglo vacío con la longitud especificada.
+        visualizarEstructura(estructura);
       }
     }
     if (e.target == $btnVisualizarEstructura) {

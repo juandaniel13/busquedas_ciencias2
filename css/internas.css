@@ -1,123 +1,158 @@
-/*  */
-/* Estilos para el menú */
-/* Estilos para el menú */
-.menu-container {
+.menu-internas button {
+  margin: 0 auto;
+  padding: .5rem;
+  font-weight: bold;
+  width: 200px;
+  background-color: #F4F4F4;
+}
+
+.menu-internas button:hover {
+
+  background-color: #CDCCCC;
+}
+
+.panel-busqueda {
+
+  margin: 0 auto;
   margin-top: 20px;
-  text-align: center; /* Centrar el menú horizontal en el contenedor */
-}
-
-#menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: inline-block; /* Para que el menú sea horizontal */
-}
-
-#menu li {
-  display: inline;
-  margin-right: 10px; /* Espacio entre las opciones del menú */
-}
-
-#menu li a {
-  text-decoration: none;
-  color: #333; /* Color del texto del enlace */
-  padding: 5px 10px;
-  border: 1px solid #333; /* Borde alrededor de los enlaces */
-  border-radius: 5px; /* Esquinas redondeadas */
-  background-color: #f0f0f0; /* Color de fondo del enlace */
-  transition: background-color 0.2s, color 0.2s;
-}
-
-#menu li a:hover {
-  background-color: #333; /* Color de fondo al pasar el mouse por encima */
-  color: #fff; /* Color del texto al pasar el mouse por encima */
-}
-
-
-/* Estilos generales para formularios */
-.menu-opciones {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  padding: 10px;
-  border: thin solid #ccc;
+  width: 90%;
+  border: thin solid black;
+  height: 70vh;
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-evenly;
-  background-color: #f8f8f8;
-  border-radius: 5px;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+
+
 }
 
-.menu-opciones * {
-  margin-bottom: 15px;
+
+.crear-estructura {
+  margin-top: 15px;
+  width: 50%;
+
 }
 
-/* Estilos para los botones */
-.menu-opciones button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
+.crear-estructura * {
+  padding: 8px;
+
 }
 
-.menu-opciones button:hover {
-  background-color: #0056b3;
+.crear-estructura button,
+.insertar-registro button,
+.buscar-clave button {
+  margin-left: 5px;
+  background-color: #1E66CB;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+
+
 }
 
-/* Estilos para los campos de entrada */
-.menu-opciones input[type="number"] {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.menu-opciones select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-/* Estilos para etiquetas */
-.menu-opciones label {
-  display: block;
-  margin-bottom: 5px;
+.eliminar-clave button {
+  color: white;
+  background-color: #A00000;
   font-weight: bold;
 }
 
-/* Estilos para el contenedor de salida */
+
+.insertar-registro {
+  margin-top: 15px;
+  width: 80%;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.insertar-registro * {
+  width: 50%;
+  padding: 1px;
+  margin-left: 5px;
+  padding: 8px;
+}
+
+
+.buscar-clave {
+  margin-top: 15px;
+  width: 50%;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.buscar-clave * {
+  width: 80%;
+  padding: 8px;
+  margin-left: 5px;
+}
+
+
+.eliminar-clave {
+  margin-top: 15px;
+  width: 50%;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.eliminar-clave * {
+  width: 80%;
+  padding: 8px;
+}
+
 .salida {
-  margin-top: 0.5rem;
+  margin-top: 15px;
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
-  height: 50vh;
-  width: 100%;
-  justify-content: space-evenly;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: flex-start;
+  align-items: start;
+  border: thin solid black;
+  height: 480px;
 }
 
-/* Estilos para los paneles de estructura y resultado de búsqueda */
-.panel-estructura,
+.panel-estructura {
+  width: 50%;
+  height: inherit;
+  overflow-y: auto;
+  border-right: thin solid black;
+}
+
+.panel-estructura * {
+  margin: 0 auto;
+}
+
+
 .panel-resultado-busqueda {
-  flex: 1 1 200px;
-  border: thin solid #ccc;
-  overflow: auto;
-  max-height: 50vh;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
+
+  height: inherit;
+  width: 49.8%;
+
 }
 
-.invisible{
+
+.panel-resultado-busqueda span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.estructura-interna {
+  margin-top: 10px;
+  border-collapse: collapse;
+  border: thin solid black;
+  padding: 8px;
+  width: 40%;
+  font-size: 20px;
+
+}
+
+
+
+.invisible {
   display: none;
-}
-
-.panel-estructura-dinamicas{
-  width: 50px;
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/nav_bar.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/internas.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
@@ -14,58 +14,73 @@
 
 <body>
 
-  <!-- ... Tu código HTML existente ... -->
-<header class="header" data-dark="">
-    <h1>BÚSQUEDAS INTERNAS</h1>
-</header>
-<!-- Menú estético con opciones (horizontal) -->
-<div class="menu-container">
-    <ul id="menu">
-        <li><a href="internas.html">Búsquedas internas</a></li>
-        <li><a href="externas.html">Búsquedas externas</a></li>
-        <li><a href="DinamicasTotales/index.html">Dinámicas</a></li>
-        <li><a href="indices.html">Índices</a></li>
-        <li><a href="arboles.html">Árboles</a></li>
-    </ul>
-</div>
-<!-- Resto de tu contenido... -->
+    <!-- ... Tu código HTML existente ... -->
+    <header class="header" data-dark="">
+        <h1>BÚSQUEDAS INTERNAS</h1>
+    </header>
+    <!-- Menú estético con opciones (horizontal) -->
+    <nav class="menu-container">
+        <ul id="menu">
+            <a href="internas.html"><li>Búsquedas internas</li></a>
+            <a href="externas.html"><li>Búsquedas externas</li></a>
+            <a href="DinamicasTotales/index.html"><li>Dinámicas</li></a>
+            <a href="indices.html"><li>Índices</li></a>
+            <a href="arboles.html"><li>Árboles</li></a>
+        </ul>
+    </nav>
+    <!-- Resto de tu contenido... -->
 
     <!-- Contenido -->
     <main>
         <!-- Internas -->
-        <section id="section1" class="section">
+       
             <div class="menu-internas">
-                <button class="btn-secuencial-binaria">secuencial o binaria</button>
-                <button class="btn-hash">hash</button>
+                <button class="btn-secuencial-binaria">Secuencial o Binaria</button>
+                <button class="btn-hash">Hash</button>
             </div>
+
             <div class="panel-busqueda panel-secuencial-binaria invisible">
-                <form action="" class="form-crear-estructura menu-opciones">
-                    <!-- Crear estructura -->
+                <!--   <div class="form-crear-estructura menu-opciones"> -->
+                <!-- Crear estructura -->
+                <div class="crear-estructura">
                     <input class="input-rango" type="number" name="rango" placeholder="Rango:" title="rango">
                     <button class="btn-crear-estructura">Crear estructura</button>
-                    <button class="btn-ordenar-estructura">Ordenar estructura</button>
+                </div>
+                <!--  <button class="btn-ordenar-estructura">Ordenar estructura</button> -->
 
 
-                    <!-- visulizar estructura -->
-                    <button class="btn-visualizar-estructura">Visualizar estructura</button>
+                <!-- visulizar estructura -->
+                <!-- <button class="btn-visualizar-estructura">Visualizar estructura</button> -->
 
-                    <!-- Insertar clave -->
+                <!-- Insertar clave -->
 
+                <div class="insertar-registro">
                     <input type="number" name="clave" placeholder="Clave:" title="clave" class="input-insertar-clave">
-                    <button class="btn-insertar-clave">Insertar clave</button>
+                    <input type="text" name="nombre" placeholder="Nombre:" title="clave" class="input-insertar-nombre">
+                    <input type="text" name="apellido" placeholder="Apellido:" title="clave"
+                        class="input-insertar-apellido">
+                    <button class="btn-insertar-clave">Insertar registro</button>
+                </div>
 
 
-                    <!-- Buscar clave -->
+                <!-- Buscar clave -->
 
-                    <!-- <label for="">Tipo de búsqueda:</label> -->
+                <!-- <label for="">Tipo de búsqueda:</label> -->
+                <div class="buscar-clave">
                     <select name="Tipos de búsqueda" class="tipo-busqueda">
                         <option value="secuencial" selected>Secuencial</option>
                         <option value="binaria">Binaria</option>
                     </select>
                     <input class="clave-buscar" type="number" name="clave" placeholder="Clave" title="clave">
-                    <button class="btn-buscar-clave">Buscar</button>
+                    <button class="btn-buscar-clave">Buscar Registro</button>
+                </div>
 
-                </form>
+                <div class="eliminar-clave">
+                    <input class="clave-eliminar" type="number" name="clave" placeholder="Clave" title="clave">
+                    <button class="btn-eliminar-clave">Eliminar Registro</button>
+                </div>
+
+                <!--  </div> --><!-- xxdxdxdx -->
                 <!-- estructura de datos -->
                 <div class="salida">
                     <div class="panel-estructura">
@@ -79,45 +94,56 @@
                         </table>
                     </div>
                     <!-- Resultado búsqueda -->
-                    <div class="panel-resultado-busqueda"></div>
+                    <div class="panel-resultado-busqueda">
+                       <span> Resultados de Búsqueda:</span>
+                    </div>
                 </div>
             </div>
 
             <!-- hashing -->
-            <div class="panel-busquera panel-hash invisible">
+            <div class="panel-busqueda panel-hash invisible">
 
-                <form action="" class="form-crear-estructura-hash menu-opciones">
+                
                     <!-- Crear estructura -->
-                    <input class="input-rango-hash" type="number" name="rango" placeholder="Rango:" title="rango">
-                    <button class="btn-crear-estructura-hash">Crear estructura</button>
+                   
+                    <div class="crear-estructura">
+                        <input class="input-rango-hash" type="number" name="rango" placeholder="Rango:" title="rango">
+                        <button class="btn-crear-estructura-hash">Crear estructura</button>
+                    </div>
 
-                    <!-- visulizar estructura -->
-                    <button class="btn-visualizar-estructura-hash">Visualizar estructura</button>
+                   
 
                     <!-- Insertar clave -->
-                    <select name="tipo-hash" class="tipo-hash">
-                        <option value="mod" selected>mod</option>
-                        <option value="cuadrado">cuadrado</option>
-                        <option value="truncamiento" >truncamiento</option>
-                        <option value="plegamiento">plegamiento</option>
-                    </select>
-                    <select name="colision-hash" class="colision-hash">
-                        <option value="lineal" selected>lienal</option>
-                        <option value="cuadratica">cuadrado</option>
-                        <option value="doble-hash">doble-hash</option>
-                        <option value="arreglos-anidados">arreglos-anidados</option>
-                    </select>
-                    <input type="number" name="clave" placeholder="Clave:" title="clave"
-                        class="input-insertar-clave-hash">
-                    <button class="btn-insertar-clave-hash">Insertar clave</button>
+                    <div class="insertar-registro">
 
+                        <select name="tipo-hash" class="tipo-hash">
+                            <option value="mod" selected>mod</option>
+                            <option value="cuadrado">cuadrado</option>
+                            <option value="truncamiento">truncamiento</option>
+                            <option value="plegamiento">plegamiento</option>
+                        </select>
+                        <select name="colision-hash" class="colision-hash">
+                            <option value="lineal" selected>lienal</option>
+                            <option value="cuadratica">cuadrado</option>
+                            <option value="doble-hash">doble-hash</option>
+                            <option value="arreglos-anidados">arreglos-anidados</option>
+                        </select>
+                        <input type="number" name="clave" placeholder="Clave:" title="clave"
+                            class="input-insertar-clave-hash">
+                        <button class="btn-insertar-clave-hash">Insertar clave</button>
+
+                    </div>    
 
                     <!-- Buscar clave -->
-
-                    <input class="clave-buscar-hash" type="number" name="clave" placeholder="Clave" title="clave">
-                    <button class="btn-buscar-clave-hash">Buscar</button>
-
-                </form>
+                    <div class="buscar-clave">
+                        <input class="clave-buscar-hash" type="number" name="clave" placeholder="Clave" title="clave">
+                        <button class="btn-buscar-clave-hash">Buscar Registro</button>
+                    </div>
+                    <div class="eliminar-clave">
+                        <input class="clave-eliminar-hash" type="number" name="clave" placeholder="Clave" title="clave">
+                        <button class="btn-eliminar-clave-hash">Eliminar Registro</button>
+                    </div>
+                
                 <!-- estructura de datos -->
                 <div class="salida">
                     <div class="panel-estructura panel-estructura-hash">
@@ -133,10 +159,12 @@
                         </table>
                     </div>
                     <!-- Resultado búsqueda -->
-                    <div class="panel-resultado-busqueda panel-resultado-busqueda-hash"></div>
+                    <div class="panel-resultado-busqueda panel-resultado-busqueda-hash">
+                       Resultados de Búsqueda:
+                    </div>
                 </div>
             </div>
-        </section>
+     
     </main>
     <!-- como se va a trabajar con módulos se especifica el atributo type = module -->
     <script type="module" src="js/busquedas_internas/opciones.js"></script>

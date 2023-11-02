@@ -1,0 +1,31 @@
+.menu-container {
+    margin-top: -15px;
+    text-align: center; /* Centrar el menú horizontal en el contenedor */
+    background-color: #203246;
+    height: 20%;
+    color: white;
+  }
+  
+  /*estilos menu*/
+ #menu{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  list-style: none;
+ }
+ #menu a{
+  text-decoration: none;
+  padding: 1rem;
+  width: 100%;
+ }
+ #menu a li{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  
+ }
+
+ #menu a:hover{
+  background-color: #4E5A68;
+ }
