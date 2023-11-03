@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#menu{
+    margin-top: 0px;
+}
+
+main{
+    width: 100% ;
+}
+#Form{
+    border: thin solid black;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+#Form div{
+    margin-top: 10px;
+    margin-bottom: 15px;
+   
+}
+
+#Form div *{
+    padding: 5px;
+    width: 50%;
+    font-weight: bold;
+    font-family: 28px;
+    
+    
+}
+#Form div input{
+    padding: 5px;
+    width: 50%;
+    font-weight: bold;
+    font-family: 20px;
+    
+    
+}
+
+
+
+#Form div button{
+    margin-top: 5px;
+    background-color: #1E66CB;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+}

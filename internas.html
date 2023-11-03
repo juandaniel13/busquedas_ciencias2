@@ -59,7 +59,7 @@
                     <input type="text" name="nombre" placeholder="Nombre:" title="clave" class="input-insertar-nombre">
                     <input type="text" name="apellido" placeholder="Apellido:" title="clave"
                         class="input-insertar-apellido">
-                    <button class="btn-insertar-clave">Insertar registro</button>
+                    <button class="btn-insertar-registro">Insertar registro</button>
                 </div>
 
 
@@ -95,7 +95,7 @@
                     </div>
                     <!-- Resultado búsqueda -->
                     <div class="panel-resultado-busqueda">
-                       <span> Resultados de Búsqueda:</span>
+                       <span > Resultados de Búsqueda:</span>
                     </div>
                 </div>
             </div>
@@ -108,6 +108,12 @@
                    
                     <div class="crear-estructura">
                         <input class="input-rango-hash" type="number" name="rango" placeholder="Rango:" title="rango">
+                        <select name="colision-hash" class="colision-hash">
+                            <option value="lineal" selected>lienal</option>
+                            <option value="encadenamiento">encadenamiento</option>
+                            <option value="doble-hash">doble-hash</option>
+                            <option value="arreglos-anidados">arreglos-anidados</option>
+                        </select>
                         <button class="btn-crear-estructura-hash">Crear estructura</button>
                     </div>
 
@@ -122,15 +128,14 @@
                             <option value="truncamiento">truncamiento</option>
                             <option value="plegamiento">plegamiento</option>
                         </select>
-                        <select name="colision-hash" class="colision-hash">
-                            <option value="lineal" selected>lienal</option>
-                            <option value="cuadratica">cuadrado</option>
-                            <option value="doble-hash">doble-hash</option>
-                            <option value="arreglos-anidados">arreglos-anidados</option>
-                        </select>
+                       
                         <input type="number" name="clave" placeholder="Clave:" title="clave"
                             class="input-insertar-clave-hash">
-                        <button class="btn-insertar-clave-hash">Insertar clave</button>
+                            <input type="text" name="nombre" placeholder="Nombre:" title="clave" class="input-insertar-nombre-hash">
+                            <input type="text" name="apellido" placeholder="Apellido:" title="clave"
+                                class="input-insertar-apellido-hash">
+                           
+                        <button class="btn-insertar-clave-hash">Insertar registro</button>
 
                     </div>    
 
@@ -147,7 +152,7 @@
                 <!-- estructura de datos -->
                 <div class="salida">
                     <div class="panel-estructura panel-estructura-hash">
-                        <table class="estructura-interna-hash" border="1">
+                        <table class="estructura-interna estructura-interna-hash" border="1">
                             <thead>
                                 <tr>
                                     <th>Posición</th>
@@ -160,7 +165,7 @@
                     </div>
                     <!-- Resultado búsqueda -->
                     <div class="panel-resultado-busqueda panel-resultado-busqueda-hash">
-                       Resultados de Búsqueda:
+                       <span>Resultados de Búsqueda:</span>
                     </div>
                 </div>
             </div>

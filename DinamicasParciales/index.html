@@ -3,17 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="../css/nav_bar.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/internas.css">
+    <link rel="stylesheet" href="../css/dinamicas.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Dinamicas Parciales</h1>
+    <header class="header" data-dark="">
+        <h1>DINÁMICAS PARCIALES</h1>
+    </header>
+    <!-- menu -->
 
-    <form id="Form">
-        <label for="label" id="label">Ingrese la clave</label>
-        <input type="text" id="Clave" placeholder="datos "> <!--Placeholder con id clave, es el que recibe los datos-->
-        <button type="button" id="registrar" onclick="registrarDatos()">Registrar</button><!--mi boton al que le mando la funcion del arreglo del usuario-->
-        <button type="button" id="registrar2" onclick="registroAutomatico()">Registro Automatico</button><!--mi boton al que le mando la funcion del arreglo predefinido-->
-    </form>
+    <nav class="menu-container">
+        <ul id="menu">
+            <a href="../internas.html"><li>Búsquedas internas</li></a>
+            <a href="../externas.html"><li>Búsquedas externas</li></a>
+            <a href="../DinamicasTotales/index.html"><li>Dinámicas totales</li></a>
+            <a href="../DinamicasParciales/index.html"><li>Dinámicas Pparciales</li></a>
+            <a href="../indices.html"><li>Índices</li></a>
+            <a href="../arboles.html"><li>Árboles</li></a>
+        </ul>
+    </nav>
+
+    <main>
+        <form id="Form">
+           <div class="ingresar-clave">
+            <label for="label" id="label">Ingrese la clave</label>
+            <input type="text" id="Clave" placeholder="Clave a insertar"> <!--Placeholder con id clave, es el que recibe los datos-->
+            <button type="button" id="registrar" onclick="registrarDatos()">Registrar</button><!--mi boton al que le mando la funcion del arreglo del usuario-->
+            <button type="button" id="registrar2" onclick="registroAutomatico()">Registro Automatico</button><!--mi boton al que le mando la funcion del arreglo predefinido-->
+        </div>
+
+            <div class="buscar">
+                <input type="text" id="Buqueda" placeholder="Clave a buscar "> <!--Placeholder con id clave, es el que recibe los datos-->
+            <button type="button" id="buscar" onclick="buscarDatos()">Buscar</button><!--mi boton al que le mando la funcion del arreglo del usuario-->
+            </div>
+            <div class="eliminar">
+                <input type="text" id="Eliminar" placeholder="Clave a eliminarr "> <!--Placeholder con id clave, es el que recibe los datos-->
+            <button type="button" id="eliminar" onclick="eliminarDatos()">Eliminar</button><!--mi boton al que le mando la funcion del arreglo del usuario-->
+            </div>
+            <!-- <input type="text" id="Borrar" placeholder="Clave    a borrar "> Placeholder con id clave, es el que recibe los datos -->
+            <!-- <button type="button" id="borrar" onclick="borrarDatos()">Borrar</button>mi boton al que le mando la funcion del arreglo del usuario -->
+        </form>
+        <div class="salida">
+            <div class="panel-estructura panel-estructura-dinamicas" >
+                
+            </div>
+            
+        </div>
+    </main>
 
 <script src="script.js"></script><!--y nada, el script-->
 </body>

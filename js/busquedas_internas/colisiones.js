@@ -4,6 +4,9 @@ export function pruebaLineal(hash, estructura, rangoHash) {
   let posicion = hash;
   while (estructura[posicion] !== "") {
     posicion = (posicion + 1) % rangoHash; // Avanza linealmente hasta encontrar un espacio vacío
+    if(posicion > rangoHash){
+      posicion = 0;
+    }
   }
   return posicion;
 }
@@ -27,6 +30,9 @@ export function dobleFuncionHash(hash, estructura, rangoHash) {
   while (estructura[posicion] !== "") {
     posicion = (hash + segundoHash) % rangoHash;
     segundoHash++; // Incrementa el valor de la segunda función hash
+    if(posicion > rangoHash){
+      posicion = 0;
+    }
   }
   
   return posicion;
@@ -34,11 +40,14 @@ export function dobleFuncionHash(hash, estructura, rangoHash) {
 
 
 export function arregloAnidado(hash, estructura, rangoHash, clave) {
-  if (!estructura[hash]) {
-    estructura[hash] = []; // Inicializa la lista en la posición hash si está vacía
+  let i = hash;
+  let j=1;
+  while (estructura[i][j] !== "") {
+    j = (j + 1) ; // Avanza linealmente hasta encontrar un espacio vacío
+   /*  if(i > rangoHash){
+      i = 0;
+    } */
   }
-
-  estructura[hash].push(clave); // Agrega la clave a la lista en la posición hash
-
-  return { posicion: hash, clave };
+  return {i, j, clave};
 }
+

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/nav_bar.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/internas.css">
+    <link rel="stylesheet" href="css/externas.css">
     <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 
@@ -32,28 +33,32 @@
     <main>
         <!-- Externas -->
         <section id="section2" class="section ">
-            <div class="menu-externas">
+            <div class="menu-externas menu-internas">
                 <button class="btn-secuencial-binaria-externa">secuencial o binaria</button>
                 <button class="btn-hash-externa">hash</button>
             </div>
             <div class="panel-busqueda panel-secuencial-binaria-externa invisible">
                 <form action="" class="form-crear-estructura-externa menu-opciones">
                     <!-- Crear estructura -->
+
+                    <div class="crear-estructura">
                     <input class="input-rango-externa" type="number" name="rango" placeholder="Rango:" title="rango">
                     <button class="btn-crear-estructura-externa">Crear estructura</button>
-
+                </div>
 
                     <!-- visulizar estructura -->
-                    <button class="btn-visualizar-estructura-externa">Visualizar estructura</button>
 
                     <!-- Insertar clave -->
-
+                    <div class="insertar-registro">
                     <input type="number" name="clave" placeholder="Clave:" title="clave" class="input-insertar-clave">
+                    <input type="text" name="nombre" placeholder="Nombre:" title="clave" class="input-insertar-nombre">
+                    <input type="text" name="apellido" placeholder="Apellido:" title="clave"
+                        class="input-insertar-apellido">
                     <button class="btn-insertar-clave-externa">Insertar clave</button>
-
+                </div>
 
                     <!-- Buscar clave -->
-
+                    <div class="buscar-clave">
                     <label for="">Tipo de búsqueda:</label>
                     <select name="tipos de búsqueda-externa" class="tipo-busqueda">
                         <option value="secuencial" selected>Secuencial</option>
@@ -61,6 +66,12 @@
                     </select>
                     <input class="clave-buscar-externa" type="number" name="clave" placeholder="Clave" title="clave">
                     <button class="btn-buscar-clave-externa">Buscar</button>
+                </div>
+                <!-- eliminar clave -->
+                <div class="eliminar-clave">
+                    <input class="clave-eliminar" type="number" name="clave" placeholder="Clave" title="clave">
+                    <button class="btn-eliminar-clave">Eliminar Registro</button>
+                </div>
 
                 </form>
                 <!-- estructura de datos -->
