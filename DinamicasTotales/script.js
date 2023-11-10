@@ -8,6 +8,7 @@ let otrocontador = 0;
 let residuo = 0;
 
 const $panelEstructura = document.querySelector(".panel-estructura")
+const $arreglo = document.querySelector(".arreglo")
 
 //eso son las variables que usé
 
@@ -23,7 +24,7 @@ for (i = 0; i < 2; i++) {  //a cada espacio de la matriz segun n se le inserta u
 function registroAutomatico() {//lo mimso que la otra pero con el arreglo predefinido
     for (const item of arreglo2) {
         if (arreglo.includes(item)) {
-            console.log("no se puede")
+            
         } else {
             arreglo.push(item);//inserta el contenido del placeholder en el arreglo vacio inicial
         }
@@ -31,26 +32,38 @@ function registroAutomatico() {//lo mimso que la otra pero con el arreglo predef
     }
 }
 
+
+
+
 dinamicaTotal()
 
 function registrarDatos() {//leen contenido del placeholder del html cuando se presiona el voton
 
     var dato = document.getElementById("Clave").value;
-
+if(dato<1000){
     if (arreglo.length == 0) {
         arreglo.push(dato);//inserta el contenido del placeholder en el arreglo vacio inicial
+        dinamicaTotal()
     }
 
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < n; j++) {
+            if ( dato!="" && matriz[i][j]==dato ) {
+            }
+        }
+    }
     if (arreglo.includes(dato)) {
-        console.log("no se puede")
     } else {
+       
         arreglo.push(dato);//inserta el contenido del placeholder en el arreglo vacio inicial
+        dinamicaTotal()
     }
     document.getElementById("Clave").value = "";
 
-    dinamicaTotal() //ejecuta la funcion dinamica total, la logica
+ //ejecuta la funcion dinamica total, la logica
 }
-
+else{alert("La clave debe ser menor a 1000")}
+}
 
 function limpiarmatriz() {
     for (var i = 0; i < 2; i++) {
@@ -67,7 +80,7 @@ function limpiarmatriz() {
 
 
 function actualizarMatriz() {//reescribe la matriz definida arriba
-
+alert("la etructura se va a expandir")
     n = n * 2;
     tamañoMatriz = n * 2;
     limpiarmatriz();
@@ -87,9 +100,34 @@ function imprimirMatrizEnPanel(matriz, panel) {
     table.style.borderCollapse = "collapse";
     table.style.border = "1px solid black";
 
+    // Añade una fila para los títulos de las columnas
+    const columnTitleRow = document.createElement("tr");
+    columnTitleRow.appendChild(document.createElement("td")); // Celda vacía en la esquina superior izquierda
+
+    for (let i = 0; i < matriz[0].length; i++) {
+        const cell = document.createElement("td");
+        cell.textContent = i;
+        cell.style.border = "1px solid black";
+        cell.style.width = "50px"; // Estilo de borde para cada celda
+        cell.style.height = "50px"; // Estilo de borde para cada celda
+        cell.style.textAlign = "center";
+        columnTitleRow.appendChild(cell);
+    }
+
+    tbody.appendChild(columnTitleRow);
 
     for (let i = 0; i < matriz.length; i++) {
         const row = document.createElement("tr");
+        
+        // Añade el título de la fila
+        const rowTitleCell = document.createElement("td");
+        rowTitleCell.textContent = i+1;
+        rowTitleCell.style.border = "1px solid black";
+        rowTitleCell.style.width = "50px";
+        rowTitleCell.style.height = "50px";
+        rowTitleCell.style.textAlign = "center";
+        row.appendChild(rowTitleCell);
+
         for (let j = 0; j < matriz[i].length; j++) {
             const cell = document.createElement("td");
             cell.textContent = matriz[i][j];
@@ -104,12 +142,13 @@ function imprimirMatrizEnPanel(matriz, panel) {
     }
 
     table.appendChild(tbody);
-    panel.innerHTML = ""; // Limpia el contenido anterior del panel
+    panel.innerHTML = "<br/><br/><br/>"; // Limpia el contenido anterior del panel
     panel.appendChild(table);
 }
 
 // creo que hay problemas con esto y por eso tal vez se duplican los datos
 function dinamicaTotal() {
+  
     contador = 0
     tamañoMatriz = n * 2;
     for (i = 0; i < 2; i++) {
@@ -134,7 +173,7 @@ function dinamicaTotal() {
 
     imprimirMatrizEnPanel(matriz, $panelEstructura);
     $panelEstructura
-    console.log("el tamaño es " + tamañoMatriz)
+    
 }
 
 function hash(valor) {  //la funcion modulo hash

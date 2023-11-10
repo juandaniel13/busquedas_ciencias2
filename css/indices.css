@@ -1,0 +1,40 @@
+.panel-busqueda {
+    display: flex;
+    flex-flow: column wrap;
+}
+.menu-opciones *{
+    margin-top: 5px;
+    width: 40%;
+    padding: 3px;
+}
+.menu-opciones button{
+  margin-left: 5px;
+  background-color: #1E66CB;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+}
+.panel-estructura {
+    display:  flex;
+    flex-flow: column wrap;
+}
+
+.tabla{
+    margin-left: 20px;
+    margin-top: 10px;
+  border-collapse: collapse;
+  border: thin solid black;
+  padding: 8px;
+  width: 40%;
+  font-size: 20px;
+
+}
+.tabla row{
+   
+  border: thin solid black;
+
+
+}
+/* .panel-busqueda{
+  height: 50%;
+} */

@@ -17,7 +17,7 @@
   margin-top: 20px;
   width: 90%;
   border: thin solid black;
-  height: 70vh;
+  height: 50%;
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
@@ -30,7 +30,7 @@
 
 .crear-estructura {
   margin-top: 15px;
-  width: 50%;
+  width: 60%;
 
 }
 
@@ -47,7 +47,7 @@
   border-radius: 3px;
   color: white;
   font-weight: bold;
-  
+
 
 }
 
@@ -154,7 +154,7 @@
 }
 
 
-.btn-visualizar-registro{
+.btn-visualizar-registro {
   background-color: #01420F;
   padding: 5px;
   font-size: 16px;

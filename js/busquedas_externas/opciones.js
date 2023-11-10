@@ -255,6 +255,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
       $panelSecuencialBinaria.classList.remove("invisible");
       $panelHash.classList.add("invisible");
     } else if (e.target == $btnHash) {
+      
       $panelSecuencialBinaria.classList.add("invisible");
       $panelHash.classList.remove("invisible");
     }
@@ -268,6 +269,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
         rango = inputValue;
         estructura = new Array(rango).fill(""); // Crea un arreglo vacío con la longitud especificada.
       }
+      visualizarEstructura(estructura);
     }
     if (e.target == $btnVisualizarEstructura) {
       e.preventDefault();
@@ -282,6 +284,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
         let claveInsertar = inputValue;
         insertarClave(claveInsertar);
       }
+      visualizarEstructura(estructura);
     }
 
     if (e.target == $btnBuscarClave) {
@@ -302,6 +305,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
         rangoHash = inputValue;
         estructuraHash = new Array(rangoHash).fill(""); // Crea un arreglo vacío con la longitud especificada.
       }
+      visualizarEstructuraHash(estructuraHash);
     }
     if (e.target == $btnVisualizarEstructuraHash) {
       e.preventDefault();
@@ -322,6 +326,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
           $tipoSolColision.value
         ); // Usar selectedOptions[0].value
       }
+      visualizarEstructuraHash(estructuraHash);
     }
 
     if (e.target == $btnBuscarClaveHash) {
